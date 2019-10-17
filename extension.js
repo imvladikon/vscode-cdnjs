@@ -26,7 +26,7 @@ let activate = context => {
   let searchCache = new Cache(context, 'search')
   let libraryCache = new Cache(context, 'library')
 
-  vscode.commands.registerCommand('cdnjs.search', async () => {
+  vscode.commands.registerCommand('unpkg.search', async () => {
     // Get a search term
     let term = await showSearchInput()
     if (!term) {
@@ -73,13 +73,13 @@ let activate = context => {
     showActionPicker(chosenFile)
   })
 
-  vscode.commands.registerCommand('cdnjs.recentLibraries', async () => {
+  vscode.commands.registerCommand('unpkg.recentLibraries', async () => {
     // No Recent Libraries found
     if (recentLibraries.get().length < 1) {
       // Offer search instead
-      let value = await vscode.window.showInformationMessage('cdnjs: No Recent Libraries. Do you want to search instead?', 'Yes', 'No')
+      let value = await vscode.window.showInformationMessage('unpkg: No Recent Libraries. Do you want to search instead?', 'Yes', 'No')
       if (value === 'Yes') {
-        vscode.commands.executeCommand('cdnjs.search')
+        vscode.commands.executeCommand('unpkg.search')
       }
       return
     }
@@ -133,7 +133,7 @@ let activate = context => {
     showActionPicker(chosen)
   })
 
-  vscode.commands.registerCommand('cdnjs.clearCache', () => {
+  vscode.commands.registerCommand('unpkg.clearCache', () => {
     // Clear the search cache
     searchCache.flush()
 

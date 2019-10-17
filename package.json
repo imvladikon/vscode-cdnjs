@@ -1,10 +1,10 @@
 {
-    "name": "vscode-cdnjs",
-    "displayName": "cdnjs",
-    "description": "Search and embed libraries from cdnjs.com in Visual Studio Code",
-    "version": "0.18.0",
-    "publisher": "JakeWilson",
-    "author": "Jake Wilson",
+    "name": "vscode-unpkg",
+    "displayName": "unpkg",
+    "description": "Search and embed libraries from unpkg.com in Visual Studio Code",
+    "version": "0.0.1",
+    "publisher": "vladkon",
+    "author": "vladkon",
     "license": "MIT",
     "engines": {
         "vscode": "^1.0.0"
@@ -13,8 +13,8 @@
         "Other"
     ],
     "keywords": [
-        "cdn",
-        "cdnjs",
+        "unpkg",
+        "unpkgjs",
         "content delivery network"
     ],
     "repository": {
@@ -26,35 +26,35 @@
     },
     "homepage": "https://github.com/Jakobud/vscode-cdnjs",
     "activationEvents": [
-        "onCommand:cdnjs.search",
-        "onCommand:cdnjs.recentLibraries",
-        "onCommand:cdnjs.clearCache"
+        "onCommand:unpkg.search",
+        "onCommand:unpkg.recentLibraries",
+        "onCommand:unpkg.clearCache"
     ],
     "icon": "images/icon.png",
     "main": "./extension.js",
     "contributes": {
         "commands": [
             {
-                "command": "cdnjs.search",
+                "command": "unpkg.search",
                 "title": "Search for libraries",
-                "category": "cdnjs"
+                "category": "unpkg"
             },
             {
-                "command": "cdnjs.recentLibraries",
+                "command": "unpkg.recentLibraries",
                 "title": "Recent libraries",
-                "category": "cdnjs"
+                "category": "unpkg"
             },
             {
-                "command": "cdnjs.clearCache",
+                "command": "unpkg.clearCache",
                 "title": "Clear cache",
-                "category": "cdnjs"
+                "category": "unpkg"
             }
         ],
         "configuration": {
             "type": "object",
-            "title": "cdnjs",
+            "title": "unpkg",
             "properties": {
-                "cdnjs.quoteStyle": {
+                "unpkg.quoteStyle": {
                     "type": "string",
                     "default": "single",
                     "enum": [
@@ -63,7 +63,7 @@
                     ],
                     "description": "Quote style for HTML tags. Possible values are 'single' or 'double'"
                 },
-                "cdnjs.protocol": {
+                "unpkg.protocol": {
                     "type": "string",
                     "default": "https://",
                     "enum": [
@@ -73,12 +73,12 @@
                     ],
                     "description": "Protocol for urls in HTML tags. Possible values are 'https://', 'http://' or '//'"
                 },
-                "cdnjs.maxRecentLibraries": {
+                "unpkg.maxRecentLibraries": {
                     "type": "integer",
                     "default": 10,
                     "description": "The maxmium number of Recent Libraries to save"
                 },
-                "cdnjs.cacheTime": {
+                "unpkg.cacheTime": {
                     "type": "integer",
                     "default": 21600,
                     "description": "The length of time (in seconds) to cache library and search results"

@@ -19,7 +19,7 @@ RecentLibraries.prototype.add = function (library) {
   // Add new library to the front of the array
   this.libraries.unshift(library)
 
-  const config = this.workspace.getConfiguration('cdnjs')
+  const config = this.workspace.getConfiguration('unpkg')
 
   // Limit to maxium number of recent libraries according to configuration
   let max = config.get('maxRecentLibraries')

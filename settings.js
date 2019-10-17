@@ -4,12 +4,12 @@ const vscode = require('vscode')
 
 let settings = {}
 
-settings.baseUrl = 'https://api.cdnjs.com/libraries'
-settings.searchUrl = settings.baseUrl + '?fields=version,description,homepage'
-settings.embedUrl = 'cdnjs.cloudflare.com/ajax/libs'
+settings.baseUrl = 'http://registry.npmjs.com'
+settings.searchUrl = settings.baseUrl + '/-/v1/search?'
+settings.embedUrl = 'unpkg.com'
 settings.httpRequestTimeout = 5000
 settings.statusBarMessageTimeout = 5000
-settings.config = vscode.workspace.getConfiguration('cdnjs')
+settings.config = vscode.workspace.getConfiguration('unpkg')
 settings.quoteStyles = {
   'single': "'",
   'double': '"'
